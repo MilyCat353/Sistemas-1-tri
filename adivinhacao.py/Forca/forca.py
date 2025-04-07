@@ -22,7 +22,7 @@ while(not acertou and not enforcou):
     if contador == limite_tentativas:
         enforcou = True
         print("Você perdeu!")
-        print(palavra)
+        print("A palavra era: ", palavra)
 
     if letras_acertadas.count("-") == 0:
         acertou = True
