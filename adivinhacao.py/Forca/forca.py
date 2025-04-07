@@ -1,4 +1,6 @@
-palavra = "escola"
+import random
+palavras = ["escola", "estojo", "professor", "aluno", "cachorro", "mijitar"]
+palavra = random.choice(palavras)
 limite_tentativas = len(palavra) + 5
 acertou = False
 enforcou = False
@@ -22,7 +24,7 @@ while(not acertou and not enforcou):
     if contador == limite_tentativas:
         enforcou = True
         print("Você perdeu!")
-        print("A palavra era: ", palavra)
+        print(palavra)
 
     if letras_acertadas.count("-") == 0:
         acertou = True
