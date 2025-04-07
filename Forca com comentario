@@ -1,0 +1,49 @@
+import random  # Importa o módulo 'random' para escolher uma palavra aleatória da lista
+
+# Define uma lista de palavras para o jogo
+palavras = ["escola", "estojo", "professor", "aluno", "cachorro", "mijitar"]
+
+# Escolhe aleatoriamente uma palavra da lista 'palavras'
+palavra = random.choice(palavras)
+
+# Define o limite de tentativas como o comprimento da palavra + 5
+limite_tentativas = len(palavra) + 5
+
+# Inicializa as variáveis de controle do jogo
+acertou = False  # Define que o jogador ainda não acertou a palavra
+enforcou = False  # Define que o jogador ainda não foi enforcado (perdeu)
+
+# Cria uma lista de letras acertadas, iniciada com "-" para cada letra da palavra
+letras_acertadas = []
+for letra in palavra:
+    letras_acertadas.append("-")  # Adiciona um "-" para cada letra da palavra
+
+contador = 1  # Inicializa o contador de tentativas
+
+# Enquanto o jogador não acertar a palavra e não for enforcado, o jogo continua
+while(not acertou and not enforcou):
+    print(letras_acertadas)  # Exibe as letras acertadas (com "-" para as não acertadas)
+    print("Tentativas: ", contador, "/", limite_tentativas)  # Exibe o número de tentativas feitas
+
+    chute = input("Digite a letra: ").lower()  # Solicita ao jogador uma letra e converte para minúscula
+
+    indice = 0  # Inicializa a variável de índice para percorrer a palavra
+    # Percorre cada letra da palavra
+    for letra in palavra:
+        if chute == letra:  # Se a letra chutada for igual à letra da palavra
+            letras_acertadas[indice] = chute  # Substitui o "-" pela letra correta
+        indice = indice + 1  # Incrementa o índice para verificar a próxima letra
+
+    # Se o número de tentativas atingir o limite, o jogador perde
+    if contador == limite_tentativas:
+        enforcou = True  # Define que o jogador foi enforcado (perdeu)
+        print("Você perdeu!")  # Exibe a mensagem de perda
+        print(palavra)  # Exibe a palavra correta
+
+    # Se não há mais "-" na lista de letras acertadas, significa que a palavra foi toda acertada
+    if letras_acertadas.count("-") == 0:
+        acertou = True  # Define que o jogador acertou a palavra
+        print("Parabéns!! Você acertou!")  # Exibe a mensagem de vitória
+        print(letras_acertadas)  # Exibe as letras acertadas (a palavra completa)
+
+    contador = contador + 1  # Incrementa o contador de tentativas
