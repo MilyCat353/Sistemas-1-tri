@@ -47,24 +47,13 @@ let livros = [
 ]
 
 
+
 function mostraLivros(){
     livros.forEach((livro) => {
-        console.log(livro.Titulo + "-" +
-                    livro.Autor + "Ano: " +
-                    livro.Ano + "Páginas: " +
-                    livro.Paginas + "Preço: " +
+        console.log(livro.titulo + "-" +
+                    livro.Autor + " Ano: " +
+                    livro.Ano + " Páginas: " +
+                    livro.paginas + " Preço: " +
                     livro.Preco)
     })
 }
-
-mostraLivros()
-
-
-
-
-
-
-
-
-console.log("Título do livro: " + livros[0].titulo + " Páginas: " + livros[0].paginas + " Autor: " + livros[0].Autor + " Gẽnero: " + livros.Genero + " Ano: " + livros[0].Ano + " Preço: " + livros[0].Preco + " Sinopse: " + livros[0].Sinopse);
-
