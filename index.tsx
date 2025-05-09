@@ -4,7 +4,7 @@ import { Ionicons } from "@expo/vector-icons"
 
 // npm install expo-image (usar este código no terminal)
 
-const foto = require("../assets/images/download.jpeg")
+const foto = require("../../assets/images/icon.png")
 
 export default function Index() {
   return (
