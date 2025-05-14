@@ -83,9 +83,9 @@ console.log("Exercício 6 ")
 function verificaPrevisao(previsoes) {
     previsoes.forEach(previsao => {
         if (previsao.chanceDeChuva >= 50) {
-            console.log(`Na ${previsao.dia}, a previsão é de chuva. Leve um guarda-chuva!`);
+            console.log("No dia da semana " + previsao.dia + ", a previsão é de chuva. Leve um guarda-chuva!");
         } else {
-            console.log(`Na ${previsao.dia}, o tempo deve estar agradável.`);
+            console.log("No dia da semana " + previsao.dia + ", a previsão estará agradável");
         }
     });
 }
