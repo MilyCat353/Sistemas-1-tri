@@ -10,11 +10,9 @@ class Conta:
     def extrato(self):
         return self.__saldo
     
-
     def sacar(self, valor):
-        if self.__saldo >= valor:
+        if self.__saldo >= valor and valor > 0:
             self.__saldo -= valor
             return True 
-    else:
-        return False
-           
+        else:
+            return False
