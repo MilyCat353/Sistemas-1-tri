@@ -16,3 +16,18 @@ class Conta:
             return True 
         else:
             return False
+    def deposito(self, valor):
+        if valor > 0:
+            self.__saldo += valor
+            return True
+        else:
+            return False
+
+    def pix(self, valor, conta):
+        if self.__saldo >= valor and valor > 0:
+            self.__saldo -= valor
+            conta.deposito(valor)
+            return True 
+        else:
+            return False
+    
