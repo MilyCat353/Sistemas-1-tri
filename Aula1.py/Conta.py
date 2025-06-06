@@ -7,6 +7,10 @@ class Conta:
         self.__titular = titular
         self.__saldo = saldo
         self.__senha = senha
+    
+    @property
+    def numero(self):
+        return self.__numero
     def extrato(self):
         return self.__saldo
     
